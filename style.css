@@ -13,8 +13,8 @@
   --dark-grayish-red: hsl(0, 6%, 24%);
 
   /* gradient */
-  --first-gradient: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 245, 245, 1) 100%);
-  --second-gradient: linear-gradient(135deg, rgba(248, 191, 191, 1) 0%, rgba(238, 140, 140, 1) 100%);
+  --first-gradient: 135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 245, 245, 1) 100%;
+  --second-gradient: 135deg, rgba(248, 191, 191, 1) 0%, rgba(238, 140, 140, 1) 100%;
 
   /* font */
   --font-size: 16px;
@@ -25,6 +25,40 @@
 }
 
 main {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Title */
+h1 {
+  height: 10.5vh;
+  position: relative;
+  background: -moz-linear-gradient((var(--first-gradient)));
+  background: -webkit-linear-gradient(var(--first-gradient));
+  background: linear-gradient(var(--first-gradient));
+}
+
+h1 img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 31px;
+  max-height: 21px;
+}
+
+/* Section */
+
+section {
+  background: -moz-linear-gradient((var(--second-gradient)));
+  background: -webkit-linear-gradient(var(--second-gradient));
+  background: linear-gradient(var(--second-gradient));
+}
+
+section::before {
+  content: url(./images/hero-mobile.jpg);
+  height: 31.25vh;
+  width: 100vw;
 }
 
 /* Footer page */
