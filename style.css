@@ -1,0 +1,50 @@
+/* General */
+
+/* font-family */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/* variables from style guide */
+:root {
+  /* primary colors */
+  --desaturatedred: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+
+  /* neutral colors */
+  --dark-grayish-red: hsl(0, 6%, 24%);
+
+  /* gradient */
+  --first-gradient: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 245, 245, 1) 100%);
+  --second-gradient: linear-gradient(135deg, rgba(248, 191, 191, 1) 0%, rgba(238, 140, 140, 1) 100%);
+
+  /* font */
+  --font-size: 16px;
+  --font-family: "Josefin Sans", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+}
+
+main {
+}
+
+/* Footer page */
+
+footer.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Media queries */
+
+/* Tablet (optional)*/
+
+@media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+}
+
+/* Laptop */
+
+@media screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1) {
+}
