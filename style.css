@@ -110,7 +110,7 @@ article h3 {
 
 /* Paragraph article */
 
-article p {
+article > p {
   color: var(--desaturated-red);
   /* ???? Different with style guide */
   font-size: 14px;
@@ -129,10 +129,12 @@ article form {
 
 article form input,
 article form button {
+  -webkit-appearance: none;
   height: 6vh;
   border-radius: 3em;
   box-sizing: border-box;
   position: absolute;
+  outline: none;
 }
 
 /* Input */
@@ -142,32 +144,13 @@ article form input {
   width: 100%;
   padding: 0 26.33vw 0 6.93vw; /* padding-left = button width + error icon */
   border: 1px solid var(--desaturated-red);
-  /* color: var(); */
   background-color: transparent;
-  outline: none;
 }
 
 article form input::placeholder {
   color: var(--desaturated-red);
   opacity: 0.5;
   font-size: 0.8rem;
-}
-
-article form #error-icon {
-  position: absolute;
-  top: 1.5vh;
-  right: 19.33vw;
-  display: none;
-}
-
-/* Manage error */
-
-article form input:invalid {
-  border: 2px solid var(--soft-red);
-}
-
-article form input:invalid ~ article form #error-icon {
-  display: block;
 }
 
 /* Submit button */
@@ -181,6 +164,30 @@ article form button {
   box-shadow: 0px 16px 18px -12px rgb(238, 140, 140);
   border: none;
   width: 17.33vw;
+  cursor: pointer;
+}
+
+/* Manage error */
+
+article form input:invalid {
+  border: 2px solid var(--soft-red);
+}
+
+.error-input {
+  position: absolute;
+  display: none;
+}
+
+#error-icon {
+  top: 1.5vh;
+  right: 19.33vw;
+}
+
+#error-text {
+  bottom: -8.5vh;
+  left: 7vw;
+  font-size: 12px;
+  color: var(--soft-red);
 }
 
 /* Footer page */
