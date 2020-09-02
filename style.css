@@ -254,7 +254,7 @@ footer .attribution a {
   /* Section */
 
   section {
-    height: 87.75vh;
+    height: auto;
     padding: 0;
     background: transparent;
     width: 57.57vw;
