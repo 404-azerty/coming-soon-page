@@ -1,12 +1,12 @@
 /* General */
 
 /* font-family */
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 
 /* variables from style guide */
 :root {
   /* primary colors */
-  --desaturatedred: hsl(0, 36%, 70%);
+  --desaturated-red: hsl(0, 36%, 70%);
   --soft-red: hsl(0, 93%, 68%);
 
   /* neutral colors */
@@ -18,7 +18,7 @@
 
   /* font */
   --font-size: 16px;
-  --font-family: "Josefin Sans", sans-serif;
+  --font-family: 'Josefin Sans', sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-bold: 600;
@@ -28,9 +28,11 @@ main {
   min-height: 100vh;
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
+  color: var(--dark-grayish-red);
 }
 
 /* Title */
+
 h1 {
   height: 10.5vh;
   position: relative;
@@ -47,18 +49,138 @@ h1 img {
   max-height: 21px;
 }
 
+/* Picture */
+
+section::before {
+  content: '';
+  position: absolute;
+  background: no-repeat url(./images/hero-mobile.jpg);
+  background-size: cover;
+  left: 0;
+  top: 10.5vh; /* h1 height */
+  height: 31.25vh;
+  width: 100vw;
+}
+
 /* Section */
 
 section {
+  padding-top: 31.25vh; /* picture height */
+  background: -moz-linear-gradient((var(--first-gradient)));
+  background: -webkit-linear-gradient(var(--first-gradient));
+  background: linear-gradient(var(--first-gradient));
+  height: 89.5vh;
+}
+
+/* Title section */
+section h2 {
+  margin-top: 8.25vh;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-light);
+  font-size: 2rem;
+  color: var(--desaturated-red);
+  padding-left: 26.67vw;
+  letter-spacing: 16px;
+}
+
+/* Article */
+
+article {
+  padding: 0 8.27vw;
+}
+
+/* Title article */
+
+article h3 {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  font-size: 2.5rem;
+  letter-spacing: 16px;
+  margin-bottom: 3.375vh;
+  margin-bottom: calc(3.375vh - 0.5rem);
+}
+
+#coming {
+  padding-left: calc(17.86vw - 8.27vw);
+}
+
+#soon {
+  padding-left: calc(28.74vw - 8.27vw);
+}
+
+/* Paragraph article */
+
+article p {
+  color: var(--desaturated-red);
+  /* ???? Different with style guide */
+  font-size: 14px;
+  line-height: 2.5vh;
+  margin-bottom: 4.875vh;
+  text-align: center;
+}
+
+/* Form article */
+
+article form {
+  position: relative;
+}
+
+/* Components form */
+
+article form input,
+article form button {
+  height: 6vh;
+  border-radius: 3em;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+/* Input */
+
+article form input {
+  left: 0;
+  width: 100%;
+  padding: 0 26.33vw 0 6.93vw; /* padding-left = button width + error icon */
+  border: 1px solid var(--desaturated-red);
+  /* color: var(); */
+  background-color: transparent;
+  outline: none;
+}
+
+article form input::placeholder {
+  color: var(--desaturated-red);
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+article form #error-icon {
+  position: absolute;
+  top: 1.5vh;
+  right: 19.33vw;
+  display: none;
+}
+
+/* Manage error */
+
+article form input:invalid {
+  border: 2px solid var(--soft-red);
+}
+
+article form input:invalid ~ article form #error-icon {
+  display: block;
+}
+
+/* Submit button */
+
+article form button {
+  right: 0;
   background: -moz-linear-gradient((var(--second-gradient)));
   background: -webkit-linear-gradient(var(--second-gradient));
   background: linear-gradient(var(--second-gradient));
-}
-
-section::before {
-  content: url(./images/hero-mobile.jpg);
-  height: 31.25vh;
-  width: 100vw;
+  -webkit-box-shadow: 0px 16px 18px -12px rgb(238, 140, 140);
+  box-shadow: 0px 16px 18px -12px rgb(238, 140, 140);
+  border: none;
+  width: 17.33vw;
 }
 
 /* Footer page */
@@ -75,7 +197,7 @@ footer.attribution a {
 
 /* Tablet (optional)*/
 
-@media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (min-width: 768px) and (max-width: 1439px) and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 /* Laptop */
