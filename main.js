@@ -3,11 +3,15 @@ const email = document.querySelector('#email');
 const errorText = document.querySelector('#error-text');
 const errorIcon = document.querySelector('#error-icon');
 
+email.addEventListener('keyup', (event) => {
+  if (!email.value) hideError();
+});
+
 form.addEventListener(
   'submit',
   (event) => {
     event.preventDefault();
-    !checkEmail(email.value) ? form.reset() : showError();
+    checkEmail(email.value) ? hideError() : showError();
   },
   false
 );
@@ -21,4 +25,11 @@ function showError() {
   errorIcon.style.display = 'block';
   errorText.style.display = 'block';
   email.style.border = '2px solid hsl(0, 93%, 68%)';
+}
+
+function hideError() {
+  errorIcon.style.display = 'none';
+  errorText.style.display = 'none';
+  email.style.border = '1px solid hsl(0, 36%, 70%)';
+  form.reset();
 }

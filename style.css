@@ -73,6 +73,7 @@ section {
 }
 
 /* Title section */
+
 section h2 {
   margin-top: 8.25vh;
   text-transform: uppercase;
@@ -112,7 +113,6 @@ article h3 {
 
 article > p {
   color: var(--desaturated-red);
-  /* ???? Different with style guide */
   font-size: 14px;
   line-height: 2.5vh;
   margin-bottom: 4.875vh;
@@ -145,6 +145,8 @@ article form input {
   padding: 0 26.33vw 0 6.93vw; /* padding-left = button width + error icon */
   border: 1px solid var(--desaturated-red);
   background-color: transparent;
+  font-family: var(--font-family);
+  color: var(--dark-grayish-red);
 }
 
 article form input::placeholder {
@@ -165,6 +167,12 @@ article form button {
   border: none;
   width: 17.33vw;
   cursor: pointer;
+}
+
+article form button:active {
+  background: -moz-linear-gradient(135deg, rgba(248, 191, 191, 0.5) 0%, rgba(238, 140, 140, 0.5) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(248, 191, 191, 0.5) 0%, rgba(238, 140, 140, 0.5) 100%);
+  background: linear-gradient(135deg, rgba(248, 191, 191, 0.5) 0%, rgba(238, 140, 140, 0.5) 100%);
 }
 
 /* Manage error */
@@ -192,22 +200,143 @@ article form input:invalid {
 
 /* Footer page */
 
-footer.attribution {
+footer .attribution {
   font-size: 11px;
   text-align: center;
+  padding: 1vh;
 }
-footer.attribution a {
+footer .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
 /* Media queries */
 
-/* Tablet (optional)*/
+@media all and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* General */
 
-@media screen and (min-width: 768px) and (max-width: 1439px) and (-webkit-min-device-pixel-ratio: 1) {
-}
+  main {
+    height: 100vh;
+    background: top left / 57.57vw 100vh no-repeat url(./images/bg-pattern-desktop.svg), linear-gradient(var(--first-gradient));
+  }
 
-/* Laptop */
+  /* Title */
 
-@media screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1) {
+  h1 {
+    padding-top: 8.125vh;
+    padding-left: 11.32vw;
+    height: 4.125vh;
+    position: static;
+    background: transparent;
+  }
+
+  h1 img {
+    position: static;
+    top: 0;
+    transform: none;
+    left: 0;
+    max-height: 33px;
+  }
+
+  /* Picture */
+
+  section::before {
+    content: '';
+    position: absolute;
+    left: 57.57vw;
+    right: 0;
+    top: 0;
+    background: no-repeat url(./images/hero-desktop.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 42.43vw;
+  }
+
+  /* Section */
+
+  section {
+    height: 87.75vh;
+    padding: 0;
+    background: transparent;
+    width: 57.57vw;
+    padding-left: 11.32vw;
+  }
+
+  /* Title section */
+
+  section h2 {
+    padding-left: 0;
+    margin-top: 21.125vh;
+    font-size: 4rem;
+    letter-spacing: 18px;
+  }
+
+  /* Article */
+
+  article {
+    padding: 0.4vh 15.21vw 0 0;
+  }
+
+  /* Title article */
+
+  article h3 {
+    font-size: 3.9rem;
+    letter-spacing: 19px;
+    line-height: 1.1em;
+  }
+
+  #coming,
+  #soon {
+    padding: 0;
+  }
+
+  /* Paragraph article */
+
+  article > p {
+    text-align: left;
+    font-size: var(--font-size);
+    line-height: 3.5vh;
+  }
+
+  /* Form article */
+  /* article form - no change */
+
+  /* Components form */
+
+  article form input,
+  article form button {
+    height: 7.25vh;
+  }
+
+  /* Input */
+
+  article form input {
+    padding: 0 7.08vw 0 2.25vw;
+    font-weight: var(--font-weight-bold);
+    font-size: 15px;
+  }
+
+  /* article form input::placeholder- no change  */
+
+  /* Submit button */
+
+  article form button {
+    width: 7.08vw;
+  }
+
+  /* Manage error */
+
+  /* article form input:invalid - no change  */
+
+  /* .error-input - no change */
+
+  #error-icon {
+    right: 8vw;
+    top: 2.25vh;
+  }
+
+  #error-text {
+    bottom: -10vh;
+    left: 2.25vw;
+    font-size: 13px;
+  }
 }
